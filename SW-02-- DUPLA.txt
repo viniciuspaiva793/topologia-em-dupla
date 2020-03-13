@@ -1,0 +1,34 @@
+enable
+configure terminal        
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+hostname SW-02
+service password-encryption
+ip domain-name 1rede.local
+username Vinicius privilege 15 secret 123
+crypto key generate rsa general-keys modulus 1024
+enable secret VINICIUS*enable
+line console 0  
+password Vinicius*console
+login
+login local
+exit   
+ip default-gateway 172.16.0.1 
+
+interface vlan 1 
+ip address 172.16.255.254 255.255.0.0
+no shutdown
+description INTERFACE DE GERENCIAMENTO
+exit 
+interface f0/1  
+description Porta conectada ao PC-02
+exit   
+interface g0/1
+description Porta conectada ao RT-01
+exit
+line vty 0 15  
+password VINICIUS*vty
+transport input ssh
+login
+login local
+end
+wr

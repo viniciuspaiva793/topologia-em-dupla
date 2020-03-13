@@ -1,0 +1,18 @@
+SW-02
+Hostaname [hostname SW-02]
+Banner [banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS"
+Criar usuário local 
+Senha da enable [enable secret SEUNOME*enable]
+Senha da Console [password SEUNOME*console]
+Domínio [ip domain-name 1rede.local]
+Chave de Criptografia [crpto key generate rsa general-key modulus 1024]
+Senha da VTY [password SEUNOME*vty]
+Ativar login local na Console [login local]
+Ativar login local na VTY [login local]
+Encriptar as senhas [service password-encryption]
+IP na VLAN 1
+  IP:172.16.255.254
+  Máscara: 255.255.0.0
+  Ativar a interface [no shutown]
+Inserir o gateway [ip default-gateway 172.16.0.1]
+Salva [wr]

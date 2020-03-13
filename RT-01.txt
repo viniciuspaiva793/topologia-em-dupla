@@ -1,0 +1,18 @@
+RT-01
+Hostaname [hostname RT-01]
+Banner [banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS"
+Criar usuário local 
+Senha da enable [enable secret SEUNOME*enable]
+Senha da Console [password SEUNOME*console]
+Domínio [ip domain-name 1rede.local]
+Chave de Criptografia [crpto key generate rsa general-key modulus 1024]
+Senha da VTY [password SEUNOME*vty]
+Ativar login local na Console [login local]
+Ativar login local na VTY [login local]
+Encriptar as senhas [service password-encryption]
+IP nas interfaces g0/0 e g0/1
+  IP:g0/0 192.168.0.1
+  Máscara: 255.255.255.0
+  IP:  g0/1 172.16.0.1
+  Ativar a interface [no shutown]
+Salva [wr]
